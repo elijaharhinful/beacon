@@ -1,21 +1,10 @@
 'use client';
 
 const reasons = [
-  {
-    num: '01',
-    title: 'Ship faster, without the chaos',
-    desc: 'We combine proven engineering processes with a bias for speed. No endless meetings — just clear milestones, clean code, and consistent delivery.',
-  },
-  {
-    num: '02',
-    title: 'End-to-end ownership',
-    desc: 'From initial discovery through to post-launch support, we take full responsibility for quality. You get one accountable partner, not a dozen vendors.',
-  },
-  {
-    num: '03',
-    title: 'Engineered to grow with you',
-    desc: 'Every system we build is designed for longevity. Scalable architecture, maintainable codebases, and future-proof tooling choices from day one.',
-  },
+  { num: '01', title: 'Built specifically for your business needs' },
+  { num: '02', title: 'Designed for scalability and long-term performance' },
+  { num: '03', title: 'Engineered to eliminate inefficiencies' },
+  { num: '04', title: 'Focused on delivering measurable results' },
 ];
 
 export default function WhyBeacon() {
@@ -28,9 +17,13 @@ export default function WhyBeacon() {
             <p className="text-[#00d4aa] text-xs font-semibold tracking-widest uppercase mb-4">
               Our Advantage
             </p>
-            <h2 className="text-4xl lg:text-5xl font-black text-white leading-tight mb-12">
+            <h2 className="text-4xl lg:text-5xl font-black text-white leading-tight mb-6">
               Why BEACON
             </h2>
+            <div className="text-gray-400 text-base leading-relaxed mb-12 max-w-xl">
+              <p className="mb-4">We don't just build software. We build systems that redefine how your business operates.</p>
+              <p>Every solution is designed with precision - aligned with your structure, your goals, and your future.</p>
+            </div>
 
             <div className="flex flex-col gap-10">
               {reasons.map((r, i) => (
@@ -40,11 +33,10 @@ export default function WhyBeacon() {
                     {r.num}
                   </span>
                   <div>
-                    <div className="flex items-center gap-3 mb-2">
+                    <div className="flex items-center gap-3">
                       <div className="w-1 h-5 bg-[#00d4aa] rounded-full" />
                       <h3 className="text-white font-bold text-base">{r.title}</h3>
                     </div>
-                    <p className="text-gray-500 text-sm leading-relaxed pl-4">{r.desc}</p>
                   </div>
                 </div>
               ))}

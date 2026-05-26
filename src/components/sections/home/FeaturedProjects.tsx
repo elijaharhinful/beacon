@@ -1,29 +1,40 @@
 'use client';
 
+import { Card, CardContent } from '@/components/ui/Card';
+import { Button } from '@/components/ui/Button';
+
 const projects = [
   {
-    title: 'Nexus Dashboard',
-    category: 'SaaS Platform',
-    desc: 'A real-time operations dashboard for a logistics company handling 50,000+ daily transactions.',
-    tags: ['Next.js', 'Supabase', 'D3.js'],
+    title: 'ERP System',
+    category: 'Enterprise',
+    desc: 'A complete enterprise solution for managing operations, finance, and resources.',
+    tags: ['Next.js', 'PostgreSQL', 'Node.js'],
     gradient: 'from-[#00d4aa]/20 to-[#0d4a40]/30',
     accent: '#00d4aa',
   },
   {
-    title: 'Vanta City',
-    category: 'E-Commerce',
-    desc: 'Full-stack commerce platform with AI-powered recommendations and sub-100ms page loads.',
-    tags: ['React', 'Node.js', 'Stripe'],
+    title: 'POS System',
+    category: 'Commerce',
+    desc: 'A modern point-of-sale system designed for efficiency and scalability.',
+    tags: ['React', 'Electron', 'Stripe'],
     gradient: 'from-[#6366f1]/20 to-[#1e1b4b]/30',
     accent: '#6366f1',
   },
   {
-    title: 'Pulse Analytics',
-    category: 'Data Product',
-    desc: 'Self-serve analytics tool that replaced a $200k/yr enterprise BI contract for a Series B startup.',
-    tags: ['Python', 'FastAPI', 'Clickhouse'],
+    title: 'Conference Platform',
+    category: 'Institutional',
+    desc: 'An end-to-end platform for managing events, registrations, and engagement.',
+    tags: ['Next.js', 'Supabase', 'WebSockets'],
     gradient: 'from-[#f59e0b]/20 to-[#451a03]/30',
     accent: '#f59e0b',
+  },
+  {
+    title: 'Student Registration System',
+    category: 'Institutional',
+    desc: 'A streamlined system for managing institutional enrollment and records.',
+    tags: ['React', 'Python', 'AWS'],
+    gradient: 'from-[#ec4899]/20 to-[#831843]/30',
+    accent: '#ec4899',
   },
 ];
 
@@ -34,26 +45,26 @@ export default function FeaturedProjects() {
         <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-14">
           <div>
             <p className="text-[#00d4aa] text-xs font-semibold tracking-widest uppercase mb-4">
-              Portfolio
-            </p>
-            <h2 className="text-4xl lg:text-5xl font-black text-white leading-tight">
               Featured Projects
+            </p>
+            <h2 className="text-4xl lg:text-5xl font-black text-white leading-tight mb-4">
+              Real Systems. Real Impact.
             </h2>
+            <p className="text-gray-400 text-base max-w-2xl">
+              A selection of systems we've designed and built - each solving real-world challenges through thoughtful engineering.
+            </p>
           </div>
-          <button className="text-sm text-[#00d4aa] font-medium hover:underline underline-offset-4 flex items-center gap-1.5 shrink-0 self-end">
-            View all projects
+          <Button variant="link" className="shrink-0 self-end">
+            View All Projects
             <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" strokeWidth="1.5">
               <path d="M2 7h10M8 3l4 4-4 4" strokeLinecap="round" strokeLinejoin="round"/>
             </svg>
-          </button>
+          </Button>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {projects.map((project, i) => (
-            <div
-              key={i}
-              className="group relative rounded-2xl overflow-hidden bg-[#0a0d0f] border border-white/5 hover:border-white/10 transition-all duration-300 hover:-translate-y-1"
-            >
+            <Card key={i}>
               {/* Project visual */}
               <div className={`relative h-52 bg-gradient-to-br ${project.gradient} overflow-hidden`}>
                 {/* Grid overlay */}
@@ -92,7 +103,7 @@ export default function FeaturedProjects() {
               </div>
 
               {/* Content */}
-              <div className="p-6">
+              <CardContent>
                 <h3 className="text-white font-bold text-xl mb-2 group-hover:text-[#00d4aa] transition-colors duration-200">
                   {project.title}
                 </h3>
@@ -110,14 +121,14 @@ export default function FeaturedProjects() {
                   ))}
                 </div>
 
-                <button className="flex items-center gap-1.5 text-sm font-medium text-gray-500 hover:text-white transition-colors group-hover:text-[#00d4aa]">
+                <Button variant="ghost" size="sm" className="!p-0 gap-1.5 hover:bg-transparent group-hover:text-[#00d4aa]">
                   View Case Study
                   <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" strokeWidth="1.5">
                     <path d="M2 7h10M8 3l4 4-4 4" strokeLinecap="round" strokeLinejoin="round"/>
                   </svg>
-                </button>
-              </div>
-            </div>
+                </Button>
+              </CardContent>
+            </Card>
           ))}
         </div>
       </div>

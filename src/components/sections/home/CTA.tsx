@@ -1,5 +1,7 @@
 'use client';
 
+import { Button } from '@/components/ui/Button';
+
 export default function CTA() {
   return (
     <section className="relative bg-[#0d1117] py-28 px-6 overflow-hidden">
@@ -24,17 +26,16 @@ export default function CTA() {
           <span className="text-[#00d4aa]">Forward?</span>
         </h2>
         <p className="text-gray-400 text-lg leading-relaxed mb-10 max-w-xl mx-auto">
-          Tell us about your project and we'll get back to you within one business day with a clear
-          path forward.
+          Let's design a system that transforms your business and supports your growth.
         </p>
 
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-          <button className="bg-[#00d4aa] hover:bg-[#00b894] text-[#0a0d0f] font-bold text-sm px-10 py-4 rounded transition-all duration-200 hover:shadow-2xl hover:shadow-[#00d4aa]/30 hover:-translate-y-0.5 w-full sm:w-auto">
-            Start a Conversation
-          </button>
-          <button className="border border-white/15 hover:border-white/30 text-white font-medium text-sm px-10 py-4 rounded transition-all duration-200 hover:bg-white/5 w-full sm:w-auto">
-            View Case Studies
-          </button>
+          <Button variant="primary" size="lg" className="w-full sm:w-auto">
+            Start Your Project
+          </Button>
+          <Button variant="outline" size="lg" className="w-full sm:w-auto">
+            Book a Call
+          </Button>
         </div>
 
         {/* Trust signals */}

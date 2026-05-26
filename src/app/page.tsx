@@ -1,19 +1,19 @@
 import type { Metadata } from 'next';
-import Navbar from '@/components/Navbar';
-import Hero from '@/components/Hero';
-import Stats from '@/components/Stats';
-import WhatWeBuild from '@/components/WhatWeBuild';
-import WhyBeacon from '@/components/WhyBeacon';
-import HowItWorks from '@/components/HowItWorks';
-import FeaturedProjects from '@/components/FeaturedProjects';
-import OurServices from '@/components/OurServices';
-import CTA from '@/components/CTA';
-import Footer from '@/components/Footer';
+import Navbar from '@/components/layout/Navbar';
+import Hero from '@/components/sections/home/Hero';
+import TrustStrip from '@/components/sections/home/TrustStrip';
+import WhatWeBuild from '@/components/sections/home/WhatWeBuild';
+import WhyBeacon from '@/components/sections/home/WhyBeacon';
+import HowItWorks from '@/components/sections/home/HowItWorks';
+import FeaturedProjects from '@/components/sections/home/FeaturedProjects';
+import OurServices from '@/components/sections/home/OurServices';
+import CTA from '@/components/sections/home/CTA';
+import Footer from '@/components/layout/Footer';
 
 export const metadata: Metadata = {
   title: 'Beacon — Build Forward',
   description:
-    'Beacon is a software studio that designs and engineers high-performance digital products. From MVPs to enterprise platforms — we build forward.',
+    'We design and build custom systems that transform how businesses operate - turning complexity into clarity, and ideas into scalable solutions.',
   keywords: ['software studio', 'web development', 'design', 'engineering', 'startup', 'SaaS'],
   openGraph: {
     title: 'Beacon — Build Forward',
@@ -27,7 +27,7 @@ export default function Home() {
     <main className="min-h-screen bg-[#0a0d0f]">
       <Navbar />
       <Hero />
-      <Stats />
+      <TrustStrip />
       <WhatWeBuild />
       <WhyBeacon />
       <HowItWorks />

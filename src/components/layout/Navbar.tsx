@@ -1,19 +1,21 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
+import { useScroll } from '@/hooks/use-scroll';
+import { Button } from '@/components/ui/Button';
 
 export default function Navbar() {
-  const [scrolled, setScrolled] = useState(false);
+  const scrolled = useScroll(20);
   const [mobileOpen, setMobileOpen] = useState(false);
 
-  useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 20);
-    window.addEventListener('scroll', onScroll);
-    return () => window.removeEventListener('scroll', onScroll);
-  }, []);
-
-  const links = ['Home', 'Services', 'Projects', 'About'];
+  const links = [
+    { name: 'Solutions', href: '/solutions' },
+    { name: 'Services', href: '/services' },
+    { name: 'Projects', href: '/projects' },
+    { name: 'About', href: '/about' },
+  ];
 
   return (
     <nav
@@ -25,37 +27,39 @@ export default function Navbar() {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2 group">
-            <div className="w-7 h-7 rounded bg-[#00d4aa] flex items-center justify-center">
-              <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
-                <path d="M7 1L13 7L7 13L1 7L7 1Z" fill="#0a0d0f" />
-              </svg>
-            </div>
-            <span className="text-white font-bold text-lg tracking-widest uppercase">Beacon</span>
+            <Image 
+              src="/images/beacon_landscape_no_bg.png" 
+              alt="Beacon Logo" 
+              width={140} 
+              height={40} 
+              className="h-8 w-auto object-contain"
+              priority
+            />
           </Link>
 
           {/* Desktop nav */}
           <div className="hidden md:flex items-center gap-8">
             {links.map((link) => (
               <Link
-                key={link}
-                href={`#${link.toLowerCase()}`}
+                key={link.name}
+                href={link.href}
                 className="text-gray-400 hover:text-white text-sm font-medium transition-colors duration-200"
               >
-                {link}
+                {link.name}
               </Link>
             ))}
           </div>
 
           {/* CTA */}
           <div className="hidden md:flex items-center gap-4">
-            <button className="bg-[#00d4aa] hover:bg-[#00b894] text-[#0a0d0f] font-semibold text-sm px-5 py-2 rounded transition-all duration-200 hover:shadow-lg hover:shadow-[#00d4aa]/20">
+            <Button variant="primary" size="sm">
               Get Started
-            </button>
+            </Button>
           </div>
 
           {/* Mobile burger */}
           <button
-            className="md:hidden text-gray-400 hover:text-white transition-colors"
+            className="md:hidden text-gray-400 hover:text-white transition-colors cursor-pointer"
             onClick={() => setMobileOpen(!mobileOpen)}
             aria-label="Toggle menu"
           >
@@ -77,17 +81,17 @@ export default function Navbar() {
         <div className="md:hidden bg-[#0d1117]/98 backdrop-blur-md border-t border-white/5 px-6 py-4 flex flex-col gap-4">
           {links.map((link) => (
             <Link
-              key={link}
-              href={`#${link.toLowerCase()}`}
+              key={link.name}
+              href={link.href}
               className="text-gray-400 hover:text-white text-sm font-medium py-1 transition-colors"
               onClick={() => setMobileOpen(false)}
             >
-              {link}
+              {link.name}
             </Link>
           ))}
-          <button className="bg-[#00d4aa] text-[#0a0d0f] font-semibold text-sm px-5 py-2.5 rounded w-full mt-2">
+          <Button variant="primary" size="sm" className="w-full mt-2">
             Get Started
-          </button>
+          </Button>
         </div>
       )}
     </nav>

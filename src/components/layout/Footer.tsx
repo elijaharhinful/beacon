@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
 
 const navLinks = [
   { label: 'Home', href: '#home' },
@@ -57,12 +58,13 @@ export default function Footer() {
           {/* Brand */}
           <div className="lg:col-span-1">
             <Link href="/" className="flex items-center gap-2 mb-4">
-              <div className="w-7 h-7 rounded bg-[#00d4aa] flex items-center justify-center">
-                <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
-                  <path d="M7 1L13 7L7 13L1 7L7 1Z" fill="#0a0d0f" />
-                </svg>
-              </div>
-              <span className="text-white font-bold text-lg tracking-widest uppercase">Beacon</span>
+              <Image 
+                src="/images/beacon_landscape_no_bg.png" 
+                alt="Beacon Logo" 
+                width={140} 
+                height={40} 
+                className="h-8 w-auto object-contain"
+              />
             </Link>
             <p className="text-gray-500 text-sm leading-relaxed mb-6">
               We build the digital products that define tomorrow's companies.

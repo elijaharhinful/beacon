@@ -8,9 +8,8 @@ const services = [
         <path d="M8 21h8M12 17v4" />
       </svg>
     ),
-    title: 'Enterprise',
-    description:
-      'Scalable platforms and infrastructure built for businesses that demand reliability and performance at scale.',
+    title: 'Enterprise Systems',
+    description: 'Core systems that manage and streamline business operations at scale.',
   },
   {
     icon: (
@@ -19,19 +18,8 @@ const services = [
         <path d="M2 17l10 5 10-5M2 12l10 5 10-5" />
       </svg>
     ),
-    title: 'Blur Plan',
-    description:
-      'Rapid MVP delivery with pixel-perfect design systems and clean code handoffs for early-stage products.',
-  },
-  {
-    icon: (
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-        <path d="M18 20V10M12 20V4M6 20v-6" />
-      </svg>
-    ),
-    title: 'Analytics',
-    description:
-      'Data pipelines, dashboards, and insight engines that transform raw data into decisions you can act on.',
+    title: 'Workflow & Automation Systems',
+    description: 'Automating processes to eliminate inefficiencies and improve productivity.',
   },
   {
     icon: (
@@ -40,9 +28,8 @@ const services = [
         <path d="M14 11a5 5 0 00-7.54-.54l-3 3a5 5 0 007.07 7.07l1.71-1.71" />
       </svg>
     ),
-    title: 'Integrations',
-    description:
-      'Seamless third-party connections, webhooks, and API bridges that keep your ecosystem in sync.',
+    title: 'Industry Platforms',
+    description: 'Custom-built systems tailored to the unique needs of specific industries.',
   },
   {
     icon: (
@@ -50,9 +37,8 @@ const services = [
         <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
       </svg>
     ),
-    title: 'Demo',
-    description:
-      'Interactive product demos and proof-of-concept builds that win stakeholders before a single line ships.',
+    title: 'Commerce Systems',
+    description: 'Platforms that power transactions, payments, and revenue operations.',
   },
   {
     icon: (
@@ -61,9 +47,17 @@ const services = [
         <path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83" />
       </svg>
     ),
-    title: 'AI & Automation',
-    description:
-      'LLM-powered features, workflow automation, and AI integrations that give your product a serious edge.',
+    title: 'Institutional Systems',
+    description: 'Secure and scalable solutions for schools, organizations, and public institutions.',
+  },
+  {
+    icon: (
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+        <path d="M18 20V10M12 20V4M6 20v-6" />
+      </svg>
+    ),
+    title: 'Data & Intelligence Systems',
+    description: 'Transforming data into actionable insights through advanced analytics and reporting.',
   },
 ];
 
@@ -83,8 +77,7 @@ export default function WhatWeBuild() {
           </div>
           <div className="lg:w-1/2 flex items-end">
             <p className="text-gray-400 text-base leading-relaxed">
-              We work across the full stack — from pixel-perfect interfaces to robust backend
-              systems. Whatever you need shipped, we have the expertise to deliver it.
+              We build systems that form the backbone of modern organizations - designed to improve efficiency, enhance decision-making, and support long-term growth.
             </p>
           </div>
         </div>

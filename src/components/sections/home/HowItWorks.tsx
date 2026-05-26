@@ -10,7 +10,7 @@ const steps = [
     ),
     step: '01',
     title: 'Discover',
-    desc: 'We deep-dive into your goals, users, and constraints to frame the right problem before writing a line of code.',
+    desc: 'We take time to understand your business, processes, and challenges.',
   },
   {
     icon: (
@@ -20,7 +20,7 @@ const steps = [
     ),
     step: '02',
     title: 'Design',
-    desc: 'Systems thinking meets pixel precision. We prototype, iterate, and validate until the interface feels inevitable.',
+    desc: 'We architect a system tailored to your operational needs.',
   },
   {
     icon: (
@@ -31,7 +31,7 @@ const steps = [
     ),
     step: '03',
     title: 'Build',
-    desc: 'Agile sprints, clean architecture, and continuous integration. We ship working software on a predictable cadence.',
+    desc: 'We develop, test, and deploy with precision and attention to detail.',
   },
   {
     icon: (
@@ -40,8 +40,8 @@ const steps = [
       </svg>
     ),
     step: '04',
-    title: 'Deploy',
-    desc: 'Zero-downtime launches with full monitoring, automated rollbacks, and handoff documentation your team will love.',
+    title: 'Scale',
+    desc: 'We support, optimize, and evolve your system as your business grows.',
   },
 ];
 

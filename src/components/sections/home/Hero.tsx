@@ -1,5 +1,7 @@
 'use client';
 
+import { Button } from '@/components/ui/Button';
+
 export default function Hero() {
   return (
     <section
@@ -16,22 +18,14 @@ export default function Hero() {
         }}
       />
 
-      {/* Radial glow */}
-      <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[500px] bg-[#00d4aa]/8 rounded-full blur-[120px] pointer-events-none" />
-      <div className="absolute bottom-0 left-1/4 w-[400px] h-[300px] bg-[#00d4aa]/5 rounded-full blur-[100px] pointer-events-none" />
+      {/* Radial glow emerging from the right */}
+      <div className="absolute top-1/2 right-0 translate-x-1/4 -translate-y-1/2 w-[1000px] h-[800px] bg-[#00d4aa]/10 rounded-full blur-[150px] pointer-events-none animate-pulse" />
 
       <div className="relative z-10 max-w-4xl mx-auto px-6 text-center">
-        {/* Badge */}
-        <div className="inline-flex items-center gap-2 bg-[#00d4aa]/10 border border-[#00d4aa]/20 rounded-full px-4 py-1.5 mb-8">
-          <span className="w-1.5 h-1.5 rounded-full bg-[#00d4aa] animate-pulse" />
-          <span className="text-[#00d4aa] text-xs font-semibold tracking-wider uppercase">
-            Available for New Projects
-          </span>
-        </div>
 
         {/* Headline */}
         <h1 className="text-5xl sm:text-6xl lg:text-7xl font-black text-white leading-[1.05] tracking-tight mb-6">
-          Build{' '}
+          BEACON <br className="hidden sm:block" /> Build{' '}
           <span className="relative">
             <span className="text-[#00d4aa]">Forward.</span>
             <svg
@@ -47,22 +41,21 @@ export default function Hero() {
 
         {/* Subtext */}
         <p className="text-gray-400 text-lg sm:text-xl max-w-2xl mx-auto leading-relaxed mb-10">
-          From bold ideas to production-ready products. We design and engineer high-performance
-          digital experiences that scale with your ambition.
+          We design and build custom systems that transform how businesses operate - turning complexity into clarity, and ideas into scalable solutions.
         </p>
 
         {/* CTAs */}
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-          <button className="bg-[#00d4aa] hover:bg-[#00b894] text-[#0a0d0f] font-bold text-sm px-8 py-3.5 rounded transition-all duration-200 hover:shadow-xl hover:shadow-[#00d4aa]/25 hover:-translate-y-0.5 w-full sm:w-auto">
-            Start a Project
-          </button>
-          <button className="border border-white/15 hover:border-white/30 text-white font-medium text-sm px-8 py-3.5 rounded transition-all duration-200 hover:bg-white/5 w-full sm:w-auto flex items-center gap-2">
+          <Button variant="primary" className="w-full sm:w-auto">
+            Get Started
+          </Button>
+          <Button variant="outline" className="w-full sm:w-auto flex items-center gap-2">
             <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
               <circle cx="8" cy="8" r="7" stroke="currentColor" strokeWidth="1.5"/>
               <path d="M6.5 5.5L10.5 8L6.5 10.5V5.5Z" fill="currentColor"/>
             </svg>
             View Our Work
-          </button>
+          </Button>
         </div>
 
         {/* Scroll indicator */}
