@@ -30,7 +30,7 @@ export default function CTA() {
         </p>
 
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-          <Button variant="primary" size="lg" className="w-full sm:w-auto">
+          <Button variant="default" size="lg" className="w-full sm:w-auto">
             Start Your Project
           </Button>
           <Button variant="outline" size="lg" className="w-full sm:w-auto">

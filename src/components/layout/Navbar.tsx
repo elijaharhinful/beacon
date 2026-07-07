@@ -52,7 +52,7 @@ export default function Navbar() {
 
           {/* CTA */}
           <div className="hidden md:flex items-center gap-4">
-            <Button variant="primary" size="sm">
+            <Button variant="default" size="sm">
               Get Started
             </Button>
           </div>
@@ -89,7 +89,7 @@ export default function Navbar() {
               {link.name}
             </Link>
           ))}
-          <Button variant="primary" size="sm" className="w-full mt-2">
+          <Button variant="default" size="sm" className="w-full mt-2">
             Get Started
           </Button>
         </div>

@@ -46,7 +46,7 @@ export default function Hero() {
 
         {/* CTAs */}
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-          <Button variant="primary" className="w-full sm:w-auto">
+          <Button variant="default" className="w-full sm:w-auto">
             Get Started
           </Button>
           <Button variant="outline" className="w-full sm:w-auto flex items-center gap-2">
