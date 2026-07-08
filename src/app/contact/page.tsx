@@ -1,6 +1,8 @@
 import type { Metadata } from 'next';
 import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
+import Reveal from '@/components/ui/Reveal';
+import Select from '@/components/ui/Select';
 
 export const metadata: Metadata = {
   title: 'Beacon | Contact',
@@ -62,12 +64,12 @@ export default function ContactPage() {
       {/* Hero */}
       <section className="pt-32 pb-16 px-9 lg:px-[4.5rem] lg:pt-40 lg:pb-24 border-b border-white/5 bg-[#0a0d0f]">
         <div className="max-w-4xl mx-auto text-center">
-          <h1 className="text-5xl sm:text-6xl lg:text-7xl font-black text-white leading-tight mb-8">
-            GET IN <span className="text-[#00d4aa]">TOUCH</span>
-          </h1>
-          <p className="text-gray-400 text-lg leading-relaxed max-w-2xl mx-auto">
+          <Reveal as="h1" className="text-4xl sm:text-5xl lg:text-6xl font-black text-white leading-tight mb-6">
+            Get in <span className="text-[#00d4aa]">Touch</span>
+          </Reveal>
+          <Reveal as="p" delay={120} className="text-gray-400 text-lg leading-relaxed max-w-2xl mx-auto">
             Tell us about your project in the way that works best for you. We provide multiple ways for you to connect with us - so you can choose the approach that is most convenient and effective.
-          </p>
+          </Reveal>
         </div>
       </section>
 
@@ -77,11 +79,11 @@ export default function ContactPage() {
           
           {/* Left Column: Connect Options */}
           <div className="lg:w-5/12 flex flex-col gap-8">
-            <h2 className="text-2xl font-bold text-white mb-2">Choose How to Connect</h2>
-            
+            <Reveal as="h2" className="text-2xl font-bold text-white mb-2">Choose How to Connect</Reveal>
+
             <div className="flex flex-col gap-4">
               {connectOptions.map((opt, i) => (
-                <div key={i} className="bg-[#101419] border border-white/5 p-6 rounded-xl hover:border-white/10 transition-colors flex gap-4">
+                <Reveal key={i} direction="right" delay={i * 90} className="bg-[#101419] border border-white/5 p-6 rounded-xl hover:border-white/10 transition-colors flex gap-4">
                   <div className="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center shrink-0 text-gray-400">
                     {opt.icon}
                   </div>
@@ -89,19 +91,16 @@ export default function ContactPage() {
                     <h3 className="text-white font-semibold mb-2">{opt.title}</h3>
                     <p className="text-gray-500 text-sm leading-relaxed">{opt.desc}</p>
                   </div>
-                </div>
+                </Reveal>
               ))}
             </div>
           </div>
-          
+
           {/* Right Column: Form */}
-          <div className="lg:w-7/12">
+          <Reveal direction="left" delay={120} className="lg:w-7/12">
             <div className="bg-[#101419] border border-white/5 rounded-2xl p-8 lg:p-12">
-              <div className="flex items-center gap-3 mb-10">
-                <div className="w-2 h-2 rounded-full bg-[#00d4aa] animate-pulse" />
-                <span className="text-[#00d4aa] text-xs font-bold tracking-widest uppercase">Project Request Form</span>
-              </div>
-              
+              <h2 className="text-2xl font-bold text-white mb-8">Project Request Form</h2>
+
               <form className="flex flex-col gap-6">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div className="flex flex-col gap-2">
@@ -133,12 +132,10 @@ export default function ContactPage() {
                   </div>
                   <div className="flex flex-col gap-2">
                     <label className="text-sm font-medium text-gray-400">Project Type</label>
-                    <select className="bg-black/40 border border-white/10 rounded-lg px-4 py-3 text-gray-300 focus:outline-none focus:border-[#00d4aa] transition-colors appearance-none">
-                      <option>System Architecture</option>
-                      <option>Web Development</option>
-                      <option>Mobile App Development</option>
-                      <option>Custom Software</option>
-                    </select>
+                    <Select
+                      name="projectType"
+                      options={['System Architecture', 'Web Development', 'Mobile App Development', 'Custom Software']}
+                    />
                   </div>
                 </div>
 
@@ -154,41 +151,34 @@ export default function ContactPage() {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-4">
                   <div className="flex flex-col gap-2">
                     <label className="text-sm font-medium text-gray-400">Estimated Budget</label>
-                    <select className="bg-black/40 border border-white/10 rounded-lg px-4 py-3 text-gray-300 focus:outline-none focus:border-[#00d4aa] transition-colors appearance-none">
-                      <option>$10k - $25k</option>
-                      <option>$25k - $50k</option>
-                      <option>$50k - $100k</option>
-                      <option>$100k+</option>
-                    </select>
+                    <Select
+                      name="budget"
+                      options={['$10k - $25k', '$25k - $50k', '$50k - $100k', '$100k+']}
+                    />
                   </div>
                   <div className="flex flex-col gap-2">
                     <label className="text-sm font-medium text-gray-400">Timeline</label>
-                    <select className="bg-black/40 border border-white/10 rounded-lg px-4 py-3 text-gray-300 focus:outline-none focus:border-[#00d4aa] transition-colors appearance-none">
-                      <option>ASAP</option>
-                      <option>Within 1 Month</option>
-                      <option>1-3 Months</option>
-                      <option>3+ Months</option>
-                    </select>
+                    <Select
+                      name="timeline"
+                      options={['ASAP', 'Within 1 Month', '1-3 Months', '3+ Months']}
+                    />
                   </div>
                 </div>
 
                 <div className="flex justify-end">
                   <button className="bg-[#00d4aa] text-black font-bold py-3 px-8 rounded-lg hover:bg-[#00b390] transition-colors flex items-center gap-2">
                     Submit Request
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                      <path d="M5 12h14M12 5l7 7-7 7" strokeLinecap="round" strokeLinejoin="round"/>
-                    </svg>
                   </button>
                 </div>
               </form>
             </div>
-          </div>
+          </Reveal>
         </div>
       </section>
 
       {/* Our Commitment */}
       <section className="py-24 px-9 lg:px-[4.5rem] border-t border-white/5 bg-[#0a0d0f]">
-        <div className="max-w-4xl mx-auto text-center">
+        <Reveal className="max-w-4xl mx-auto text-center">
           <h2 className="text-3xl font-bold text-white mb-6 uppercase tracking-widest">
             Our Commitment
           </h2>
@@ -198,7 +188,7 @@ export default function ContactPage() {
           <p className="text-[#00d4aa] font-bold text-xl">
             Start the conversation. Build the system.
           </p>
-        </div>
+        </Reveal>
       </section>
 
       <Footer />

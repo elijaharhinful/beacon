@@ -21,6 +21,7 @@ export default function Navbar() {
     { name: 'Solutions', href: '/solutions' },
     { name: 'Services', href: '/services' },
     { name: 'Projects', href: '/projects' },
+    { name: 'Partners', href: '/partners' },
     { name: 'About', href: '/about' },
     { name: 'Contact', href: '/contact' },
   ];

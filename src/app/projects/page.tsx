@@ -3,6 +3,7 @@ import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
 import { Card, CardContent } from '@/components/ui/Card';
 import { Button } from '@/components/ui/Button';
+import Reveal from '@/components/ui/Reveal';
 
 export const metadata: Metadata = {
   title: 'Beacon | Projects',
@@ -44,13 +45,13 @@ export default function ProjectsPage() {
 
       {/* Hero */}
       <section className="pt-32 pb-16 px-9 lg:px-[4.5rem] lg:pt-40 lg:pb-24 border-b border-white/5 bg-[#0a0d0f]">
-        <div className="max-w-7xl mx-auto">
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black text-white leading-tight mb-6">
+        <div className="max-w-7xl mx-auto text-center">
+          <Reveal as="h1" className="text-4xl sm:text-5xl lg:text-6xl font-black text-white leading-tight mb-6">
             Projects
-          </h1>
-          <p className="text-gray-400 text-lg leading-relaxed max-w-2xl">
+          </Reveal>
+          <Reveal as="p" delay={120} className="text-gray-400 text-lg leading-relaxed max-w-3xl mx-auto">
             A selection of systems we&apos;ve designed and built - each solving real-world challenges through thoughtful design and precise execution.
-          </p>
+          </Reveal>
         </div>
       </section>
 
@@ -59,7 +60,8 @@ export default function ProjectsPage() {
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {projects.map((project, i) => (
-              <Card key={i} className="bg-[#101419] border-white/5 hover:border-[#00d4aa]/30 transition-colors duration-300">
+              <Reveal key={i} delay={(i % 2) * 90} className="h-full">
+              <Card className="h-full bg-[#101419] border-white/5 hover:border-[#00d4aa]/30 transition-colors duration-300">
                 {/* Project visual placeholder */}
                 <div className="relative h-64 bg-[#0d1117] overflow-hidden border-b border-white/5">
                   {/* Grid overlay */}
@@ -98,6 +100,7 @@ export default function ProjectsPage() {
                   </Button>
                 </CardContent>
               </Card>
+              </Reveal>
             ))}
           </div>
         </div>
@@ -106,35 +109,37 @@ export default function ProjectsPage() {
       {/* Approach */}
       <section className="py-24 px-9 lg:px-[4.5rem] bg-[#0a0d0f]">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-3xl font-bold text-white mb-12">Our Approach to Projects</h2>
+          <Reveal as="h2" className="text-3xl font-bold text-white mb-12">Our Approach to Projects</Reveal>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
-            <div>
+            <Reveal delay={0}>
               <p className="text-gray-400 leading-relaxed">
                 Each system we build is driven by a clear understanding of the client&apos;s needs and operational structure.
               </p>
-            </div>
-            <div>
+            </Reveal>
+            <Reveal delay={90}>
               <p className="text-gray-400 leading-relaxed">
                 We focus on creating solutions that are not only functional, but impactful - improving efficiency, enhancing visibility, and enabling growth.
               </p>
-            </div>
-            <div>
+            </Reveal>
+            <Reveal delay={180}>
               <p className="text-gray-400 leading-relaxed">
                 Every project represents a unique problem solved through a structured approach. From enterprise platforms to specialized industry systems, our work reflects our commitment to building solutions that are efficient, scalable, and aligned with business objectives.
               </p>
-            </div>
+            </Reveal>
           </div>
         </div>
       </section>
 
       {/* Footer Banner */}
       <section className="py-24 px-9 lg:px-[4.5rem] text-center border-t border-white/5 bg-[#0d1117]">
-        <h2 className="text-3xl md:text-4xl font-bold text-white leading-tight mb-2">
-          Real systems. Real impact.
-        </h2>
-        <h2 className="text-3xl md:text-4xl font-bold text-[#00d4aa] leading-tight">
-          Built to move businesses forward.
-        </h2>
+        <Reveal>
+          <h2 className="text-3xl md:text-4xl font-bold text-white leading-tight mb-2">
+            Real systems. Real impact.
+          </h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-[#00d4aa] leading-tight">
+            Built to move businesses forward.
+          </h2>
+        </Reveal>
       </section>
 
       <Footer />

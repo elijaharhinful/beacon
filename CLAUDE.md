@@ -92,3 +92,5 @@ Flags: `--mobile` `--tablet` `--width/--height` `--full` `--selector=".x"`
 ## Text generation
 
 - No em-dashes (—) anywhere in generated code, comments, or docs. Use "-" or reword.
+- No emojis anywhere on the website (page copy, UI labels, buttons, icons) unless
+  the user explicitly asks for one in a given place. Use SVG/lucide icons instead.

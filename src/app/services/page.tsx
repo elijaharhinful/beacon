@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
+import Reveal from '@/components/ui/Reveal';
 
 export const metadata: Metadata = {
   title: 'Beacon | Services',
@@ -55,17 +56,17 @@ export default function ServicesPage() {
       <Navbar />
       
       {/* Hero */}
-      <section className="pt-32 pb-16 px-9 lg:px-[4.5rem] lg:pt-40 lg:pb-24">
-        <div className="max-w-7xl mx-auto">
-          <p className="text-[#00d4aa] text-xs font-semibold tracking-widest uppercase mb-6 border border-[#00d4aa]/30 px-3 py-1 rounded-full w-fit">
+      <section className="pt-32 pb-16 px-9 lg:px-[4.5rem] lg:pt-40 lg:pb-24 border-b border-white/5">
+        <div className="max-w-7xl mx-auto text-center">
+          <Reveal as="h1" className="text-4xl sm:text-5xl lg:text-6xl font-black text-white leading-tight mb-6">
             Services
-          </p>
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black text-white leading-tight mb-8 max-w-4xl">
+          </Reveal>
+          <Reveal as="p" delay={120} className="text-gray-400 text-lg leading-relaxed max-w-3xl mx-auto mb-4">
             Our services provide the technical foundation that brings your systems to life.
-          </h1>
-          <p className="text-gray-400 text-lg leading-relaxed max-w-2xl">
+          </Reveal>
+          <Reveal as="p" delay={180} className="text-gray-400 text-lg leading-relaxed max-w-3xl mx-auto">
             We combine design, engineering, and development to build solutions that are reliable, scalable, and aligned with your business goals.
-          </p>
+          </Reveal>
         </div>
       </section>
 
@@ -73,7 +74,7 @@ export default function ServicesPage() {
       <section className="py-12 px-9 lg:px-[4.5rem]">
         <div className="max-w-7xl mx-auto flex flex-col gap-8">
           {services.map((service, i) => (
-            <div key={i} className={`flex flex-col ${i % 2 !== 0 ? 'lg:flex-row-reverse' : 'lg:flex-row'} bg-[#0d1117] rounded-2xl overflow-hidden border border-white/5`}>
+            <Reveal key={i} direction={i % 2 !== 0 ? 'left' : 'right'} className={`flex flex-col ${i % 2 !== 0 ? 'lg:flex-row-reverse' : 'lg:flex-row'} bg-[#0d1117] rounded-2xl overflow-hidden border border-white/5`}>
               <div className="lg:w-1/2 p-10 lg:p-16 flex flex-col justify-center">
                 <div className="text-gray-300 mb-6 bg-white/5 w-12 h-12 rounded-full flex items-center justify-center border border-white/10">{service.icon}</div>
                 <h2 className="text-3xl font-bold text-white mb-6">{service.title}</h2>
@@ -101,7 +102,7 @@ export default function ServicesPage() {
                    </div>
                  </div>
               </div>
-            </div>
+            </Reveal>
           ))}
         </div>
       </section>
@@ -109,18 +110,18 @@ export default function ServicesPage() {
       {/* How We Deliver */}
       <section className="py-24 px-9 lg:px-[4.5rem] bg-[#0a0d0f]">
         <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
+          <Reveal className="text-center mb-16">
             <h2 className="text-3xl font-bold text-white mb-4">How We Deliver</h2>
             <p className="text-gray-500">A structured and disciplined development process.</p>
-          </div>
+          </Reveal>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
             {processPoints.map((pt, i) => (
-              <div key={i} className="bg-[#0d1117] border border-white/5 p-8 rounded-xl text-center group hover:border-white/10 transition-colors">
+              <Reveal key={i} delay={i * 90} className="bg-[#0d1117] border border-white/5 p-8 rounded-xl text-center group hover:border-white/10 transition-colors">
                 <div className="w-10 h-10 mx-auto rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-xs text-gray-500 font-bold tracking-wider mb-6 group-hover:border-[#00d4aa]/50 group-hover:text-[#00d4aa] transition-colors">
                   0{i + 1}
                 </div>
                 <p className="text-sm text-gray-400 leading-relaxed">{pt}</p>
-              </div>
+              </Reveal>
             ))}
           </div>
         </div>
@@ -128,12 +129,14 @@ export default function ServicesPage() {
 
       {/* Footer Banner */}
       <section className="py-32 px-9 lg:px-[4.5rem] text-center border-t border-white/5 bg-[#0d1117]">
-        <h2 className="text-4xl md:text-5xl font-black text-white leading-tight mb-2">
-          Technology built with precision.
-        </h2>
-        <h2 className="text-4xl md:text-5xl font-black text-[#00d4aa] leading-tight">
-          Systems built for performance.
-        </h2>
+        <Reveal>
+          <h2 className="text-4xl md:text-5xl font-black text-white leading-tight mb-2">
+            Technology built with precision.
+          </h2>
+          <h2 className="text-4xl md:text-5xl font-black text-[#00d4aa] leading-tight">
+            Systems built for performance.
+          </h2>
+        </Reveal>
       </section>
 
       <Footer />

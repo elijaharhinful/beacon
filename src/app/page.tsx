@@ -7,6 +7,7 @@ import WhyBeacon from '@/components/sections/home/WhyBeacon';
 import HowItWorks from '@/components/sections/home/HowItWorks';
 import FeaturedProjects from '@/components/sections/home/FeaturedProjects';
 import OurServices from '@/components/sections/home/OurServices';
+import Partners from '@/components/sections/home/Partners';
 import CTA from '@/components/sections/home/CTA';
 import Footer from '@/components/layout/Footer';
 
@@ -33,6 +34,7 @@ export default function Home() {
       <HowItWorks />
       <FeaturedProjects />
       <OurServices />
+      <Partners />
       <CTA />
       <Footer />
     </main>
