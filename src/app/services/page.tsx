@@ -11,7 +11,6 @@ const services = [
   {
     title: 'Web Development',
     desc: 'We design and build modern web applications that are fast, secure, and scalable. Our web solutions are tailored to your business needs - from internal systems to customer-facing platforms - ensuring performance, usability, and long-term reliability. Every system is built with clean architecture and a focus on efficiency, allowing your operations to run smoothly across all environments.',
-    points: ['Tailored to business needs', 'Clean architecture', 'Fast, secure, scalable', 'Cross-environment efficiency'],
     icon: (
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
         <circle cx="12" cy="12" r="10" />
@@ -19,24 +18,20 @@ const services = [
         <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
       </svg>
     ),
-    visual: 'radial-gradient(circle at right, rgba(0,212,170,0.15) 0%, transparent 60%)'
   },
   {
     title: 'Mobile App Development',
     desc: 'We develop high-performance mobile applications for iOS and Android platforms. Our mobile solutions are designed for speed, usability, and seamless user experience - ensuring that your systems are accessible anytime, anywhere. From enterprise tools to customer applications, we create mobile experiences that are intuitive, responsive, and built to scale.',
-    points: ['iOS and Android platforms', 'Seamless user experience', 'Intuitive and responsive', 'Built to scale'],
     icon: (
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
         <rect x="5" y="2" width="14" height="20" rx="2" ry="2"/>
         <line x1="12" y1="18" x2="12.01" y2="18"/>
       </svg>
     ),
-    visual: 'linear-gradient(45deg, rgba(99,102,241,0.15) 0%, transparent 70%)'
   },
   {
     title: 'Custom Software Development',
     desc: 'Every business has unique processes that require tailored solutions. We design and develop custom software built specifically around your workflows, operations, and goals. From complex enterprise systems to specialized platforms, our solutions are engineered to deliver efficiency, flexibility, and long-term value.',
-    points: ['Built for your workflows', 'Complex enterprise systems', 'Engineered for efficiency', 'Long-term value'],
     icon: (
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
         <rect x="2" y="3" width="20" height="14" rx="2"/>
@@ -44,27 +39,14 @@ const services = [
         <line x1="12" y1="17" x2="12" y2="21"/>
       </svg>
     ),
-    visual: 'radial-gradient(circle at left, rgba(245,158,11,0.15) 0%, transparent 60%)'
   },
 ];
 
 const processPoints = [
-  {
-    title: 'Understanding',
-    desc: 'Clear understanding of requirements',
-  },
-  {
-    title: 'System Design',
-    desc: 'Thoughtful system design',
-  },
-  {
-    title: 'Development Process',
-    desc: 'Efficient development process',
-  },
-  {
-    title: 'Deployment',
-    desc: 'Reliable deployment and support',
-  },
+  'Clear understanding of requirements',
+  'Thoughtful system design',
+  'Efficient development process',
+  'Reliable deployment and support',
 ];
 
 export default function ServicesPage() {
@@ -95,19 +77,9 @@ export default function ServicesPage() {
               <div className="lg:w-1/2 p-10 lg:p-16 flex flex-col justify-center">
                 <div className="text-gray-300 mb-6 bg-white/5 w-12 h-12 rounded-full flex items-center justify-center border border-white/10">{service.icon}</div>
                 <h2 className="text-3xl font-bold text-white mb-6">{service.title}</h2>
-                <p className="text-gray-400 leading-relaxed mb-8">{service.desc}</p>
-                <ul className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                  {service.points.map((pt, j) => (
-                    <li key={j} className="flex items-center gap-3 text-sm text-gray-400">
-                      <svg width="14" height="14" viewBox="0 0 14 14" fill="none" className="text-[#00d4aa] shrink-0">
-                        <path d="M2 7l3 3 7-7" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                      </svg>
-                      {pt}
-                    </li>
-                  ))}
-                </ul>
+                <p className="text-gray-400 leading-relaxed">{service.desc}</p>
               </div>
-              <div className="lg:w-1/2 relative min-h-[300px] lg:min-h-[auto]" style={{ background: service.visual }}>
+              <div className="lg:w-1/2 relative min-h-[300px] lg:min-h-[auto] bg-[#0a0d0f]">
                  {/* CSS Grid Pattern */}
                  <div 
                    className="absolute inset-0 opacity-20"
@@ -119,7 +91,6 @@ export default function ServicesPage() {
                  <div className="absolute inset-0 flex items-center justify-center p-12">
                    {/* Abstract Placeholder Graphic */}
                    <div className="w-full max-w-sm aspect-video border border-white/10 rounded-xl bg-[#0a0d0f]/80 backdrop-blur-md shadow-2xl flex flex-col items-center justify-center relative overflow-hidden">
-                      <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-white/20 to-transparent" />
                       <div className="flex gap-3 items-end h-16">
                          <div className="w-3 bg-white/10 rounded-t-sm h-8" />
                          <div className="w-3 bg-white/10 rounded-t-sm h-12" />
@@ -148,8 +119,7 @@ export default function ServicesPage() {
                 <div className="w-10 h-10 mx-auto rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-xs text-gray-500 font-bold tracking-wider mb-6 group-hover:border-[#00d4aa]/50 group-hover:text-[#00d4aa] transition-colors">
                   0{i + 1}
                 </div>
-                <h3 className="text-white font-semibold mb-3">{pt.title}</h3>
-                <p className="text-xs text-gray-500 uppercase tracking-widest">{pt.desc}</p>
+                <p className="text-sm text-gray-400 leading-relaxed">{pt}</p>
               </div>
             ))}
           </div>

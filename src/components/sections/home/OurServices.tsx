@@ -1,6 +1,7 @@
 'use client';
 
 import { Card, CardContent } from '@/components/ui/Card';
+import Reveal from '@/components/ui/Reveal';
 
 const services = [
   {
@@ -39,25 +40,19 @@ export default function OurServices() {
   return (
     <section id="about" className="bg-[#0a0d0f] py-24 px-6">
       <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-16">
-          <p className="text-[#00d4aa] text-xs font-semibold tracking-widest uppercase mb-4">
-            Services
-          </p>
+        <Reveal className="text-center mb-16">
           <h2 className="text-4xl lg:text-5xl font-black text-white mb-4">How We Build</h2>
           <p className="text-gray-500 max-w-xl mx-auto text-base leading-relaxed">
             Our services provide the technical foundation that brings your systems to life.
           </p>
-        </div>
+        </Reveal>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {services.map((service, i) => (
+            <Reveal key={i} delay={i * 100}>
             <Card
-              key={i}
               className="bg-[#0d1117] hover:border-[#00d4aa]/20 hover:-translate-y-0"
             >
-              {/* Background glow */}
-              <div className="absolute inset-0 bg-gradient-to-br from-[#00d4aa]/0 to-[#00d4aa]/3 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-
               <CardContent className="relative z-10 p-8">
                 <div className="text-gray-600 group-hover:text-[#00d4aa] transition-colors duration-300 mb-6">
                   {service.icon}
@@ -67,6 +62,7 @@ export default function OurServices() {
                 <p className="text-gray-500 text-sm leading-relaxed mb-6">{service.desc}</p>
               </CardContent>
             </Card>
+            </Reveal>
           ))}
         </div>
       </div>

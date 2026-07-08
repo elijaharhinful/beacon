@@ -1,5 +1,7 @@
 'use client';
 
+import Reveal from '@/components/ui/Reveal';
+
 const steps = [
   {
     icon: (
@@ -49,12 +51,9 @@ export default function HowItWorks() {
   return (
     <section className="bg-background py-24 px-6">
       <div className="max-w-6xl mx-auto">
-        <div className="text-center mb-20">
-          <p className="text-primary text-xs font-semibold tracking-[0.2em] uppercase mb-4">
-            Methodology
-          </p>
+        <Reveal className="text-center mb-20">
           <h2 className="text-4xl lg:text-5xl font-black text-foreground">How It Works</h2>
-        </div>
+        </Reveal>
 
         {/* Steps on a connector line */}
         <div className="relative">
@@ -65,7 +64,7 @@ export default function HowItWorks() {
             {steps.map((step, i) => {
               const active = i === steps.length - 1;
               return (
-                <div key={i} className="relative flex flex-col items-center text-center">
+                <Reveal key={i} delay={i * 110} className="relative flex flex-col items-center text-center">
                   {/* Icon badge */}
                   <div
                     className={`relative z-10 w-16 h-16 rounded-full flex items-center justify-center border transition-colors duration-300 ${
@@ -82,7 +81,7 @@ export default function HowItWorks() {
                       active ? 'text-primary' : 'text-muted-foreground/60'
                     }`}
                   >
-                    STEP {step.step}
+                    {step.step}
                   </span>
                   <h3 className={`mt-2 font-bold text-lg ${active ? 'text-primary' : 'text-foreground'}`}>
                     {step.title}
@@ -90,7 +89,7 @@ export default function HowItWorks() {
                   <p className="mt-2 text-muted-foreground text-sm leading-relaxed max-w-[16rem]">
                     {step.desc}
                   </p>
-                </div>
+                </Reveal>
               );
             })}
           </div>

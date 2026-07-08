@@ -1,6 +1,7 @@
 'use client';
 
 import { Button } from '@/components/ui/Button';
+import Reveal from '@/components/ui/Reveal';
 
 export default function Hero() {
   return (
@@ -38,12 +39,12 @@ export default function Hero() {
       <div className="relative z-10 max-w-4xl mx-auto px-6 text-center">
 
         {/* Eyebrow */}
-        <p className="text-primary/80 text-xs sm:text-sm font-semibold tracking-[0.35em] uppercase mb-6">
+        <Reveal as="p" delay={100} className="text-primary/80 text-xs sm:text-sm font-semibold tracking-[0.35em] uppercase mb-6">
           BEACON
-        </p>
+        </Reveal>
 
         {/* Headline */}
-        <h1 className="text-5xl sm:text-6xl lg:text-7xl font-black text-white leading-[1.05] tracking-tight mb-6">
+        <Reveal as="h1" delay={200} className="text-5xl sm:text-6xl lg:text-7xl font-black text-white leading-[1.05] tracking-tight mb-6">
           Build{' '}
           <span className="relative">
             <span className="text-[#00d4aa]">Forward.</span>
@@ -53,18 +54,18 @@ export default function Hero() {
               fill="none"
               preserveAspectRatio="none"
             >
-              <path d="M0 6C50 2 100 0 150 2C200 4 250 6 300 4" stroke="#00d4aa" strokeWidth="2" strokeLinecap="round" opacity="0.5"/>
+              <path className="hero-underline" d="M0 6C50 2 100 0 150 2C200 4 250 6 300 4" stroke="#00d4aa" strokeWidth="2" strokeLinecap="round"/>
             </svg>
           </span>
-        </h1>
+        </Reveal>
 
         {/* Subtext */}
-        <p className="text-gray-400 text-lg sm:text-xl max-w-2xl mx-auto leading-relaxed mb-10">
+        <Reveal as="p" delay={320} className="text-gray-400 text-lg sm:text-xl max-w-2xl mx-auto leading-relaxed mb-10">
           We design and build custom systems that transform how businesses operate - turning complexity into clarity, and ideas into scalable solutions.
-        </p>
+        </Reveal>
 
         {/* CTAs */}
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+        <Reveal delay={440} className="flex flex-col sm:flex-row items-center justify-center gap-4">
           <Button variant="default" className="w-full sm:w-auto">
             Get Started
           </Button>
@@ -75,13 +76,13 @@ export default function Hero() {
             </svg>
             View Our Work
           </Button>
-        </div>
+        </Reveal>
       </div>
 
       {/* Scroll indicator (section-anchored so it sits at the viewport bottom) */}
       <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-2 opacity-40">
         <span className="text-xs text-gray-500 tracking-widest uppercase">Scroll</span>
-        <div className="w-px h-12 bg-linear-to-b from-gray-500 to-transparent" />
+        <div className="w-px h-12 bg-gray-500/40" />
       </div>
     </section>
   );

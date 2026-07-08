@@ -1,5 +1,7 @@
 'use client';
 
+import Reveal from '@/components/ui/Reveal';
+
 const services = [
   {
     icon: (
@@ -66,38 +68,29 @@ export default function WhatWeBuild() {
     <section id="services" className="bg-[#0a0d0f] py-24 px-6">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
-        <div className="flex flex-col lg:flex-row gap-8 lg:gap-20 mb-16">
-          <div className="lg:w-1/2">
-            <p className="text-[#00d4aa] text-xs font-semibold tracking-widest uppercase mb-4">
-              Our Capabilities
-            </p>
-            <h2 className="text-4xl lg:text-5xl font-black text-white leading-tight">
-              What We Build
-            </h2>
-          </div>
-          <div className="lg:w-1/2 flex items-end">
-            <p className="text-gray-400 text-base leading-relaxed">
-              We build systems that form the backbone of modern organizations - designed to improve efficiency, enhance decision-making, and support long-term growth.
-            </p>
-          </div>
-        </div>
+        <Reveal className="max-w-3xl mx-auto text-center mb-16">
+          <h2 className="text-4xl lg:text-5xl font-black text-white leading-tight">
+            What We Build
+          </h2>
+          <p className="text-gray-400 text-base leading-relaxed mt-5">
+            We build systems that form the backbone of modern organizations - designed to improve efficiency, enhance decision-making, and support long-term growth.
+          </p>
+        </Reveal>
 
         {/* Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-px bg-white/5 rounded-xl overflow-hidden">
           {services.map((service, i) => (
-            <div
+            <Reveal
               key={i}
+              delay={(i % 3) * 90}
               className="bg-[#0a0d0f] p-8 group hover:bg-[#0d1117] transition-all duration-300 relative"
             >
-              {/* Hover accent */}
-              <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-[#00d4aa]/0 to-transparent group-hover:via-[#00d4aa]/40 transition-all duration-500" />
-
               <div className="text-[#00d4aa] mb-4 group-hover:scale-110 transition-transform duration-200 w-fit">
                 {service.icon}
               </div>
               <h3 className="text-white font-bold text-lg mb-3">{service.title}</h3>
               <p className="text-gray-500 text-sm leading-relaxed">{service.description}</p>
-            </div>
+            </Reveal>
           ))}
         </div>
       </div>

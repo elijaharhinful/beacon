@@ -12,37 +12,27 @@ export const metadata: Metadata = {
 const projects = [
   {
     title: 'ERP System',
-    category: 'Enterprise',
     desc: 'A comprehensive enterprise platform designed to manage operations, finance, inventory, and human resources within a unified system.',
-    gradient: 'from-[#00d4aa]/20 to-[#0d4a40]/30',
     accent: '#00d4aa',
   },
   {
     title: 'POS System',
-    category: 'Commerce',
     desc: 'A modern point-of-sale system built for speed, accuracy, and seamless transaction management across multiple locations.',
-    gradient: 'from-[#6366f1]/20 to-[#1e1b4b]/30',
     accent: '#6366f1',
   },
   {
     title: 'Conference Management Platform',
-    category: 'Institutional',
     desc: 'An end-to-end system for managing events, registrations, scheduling, and attendee engagement.',
-    gradient: 'from-[#f59e0b]/20 to-[#451a03]/30',
     accent: '#f59e0b',
   },
   {
     title: 'Student Registration System',
-    category: 'Institutional',
     desc: 'A structured platform designed to manage enrollment, records, and administrative processes for institutions.',
-    gradient: 'from-[#ec4899]/20 to-[#831843]/30',
     accent: '#ec4899',
   },
   {
     title: 'Tea Export Management System',
-    category: 'Industry',
     desc: 'A specialized platform built to manage export operations, documentation, logistics, and compliance within the tea industry.',
-    gradient: 'from-[#10b981]/20 to-[#064e3b]/30',
     accent: '#10b981',
   },
 ];
@@ -56,7 +46,7 @@ export default function ProjectsPage() {
       <section className="pt-32 pb-16 px-6 lg:pt-40 lg:pb-24 border-b border-white/5 bg-[#0a0d0f]">
         <div className="max-w-7xl mx-auto">
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black text-white leading-tight mb-6">
-            PROJECTS / PORTFOLIO
+            Projects
           </h1>
           <p className="text-gray-400 text-lg leading-relaxed max-w-2xl">
             A selection of systems we&apos;ve designed and built - each solving real-world challenges through thoughtful design and precise execution.
@@ -71,7 +61,7 @@ export default function ProjectsPage() {
             {projects.map((project, i) => (
               <Card key={i} className="bg-[#101419] border-white/5 hover:border-[#00d4aa]/30 transition-colors duration-300">
                 {/* Project visual placeholder */}
-                <div className={`relative h-64 bg-gradient-to-br ${project.gradient} overflow-hidden border-b border-white/5`}>
+                <div className="relative h-64 bg-[#0d1117] overflow-hidden border-b border-white/5">
                   {/* Grid overlay */}
                   <div
                     className="absolute inset-0 opacity-20"
@@ -97,12 +87,6 @@ export default function ProjectsPage() {
                 </div>
 
                 <CardContent className="p-8">
-                  <div
-                    className="text-xs font-bold uppercase tracking-widest mb-3"
-                    style={{ color: project.accent }}
-                  >
-                    {project.category}
-                  </div>
                   <h3 className="text-white font-bold text-2xl mb-4">{project.title}</h3>
                   <p className="text-gray-400 leading-relaxed mb-6">{project.desc}</p>
                   

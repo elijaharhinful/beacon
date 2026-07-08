@@ -11,12 +11,12 @@ import CTA from '@/components/sections/home/CTA';
 import Footer from '@/components/layout/Footer';
 
 export const metadata: Metadata = {
-  title: 'Beacon — Build Forward',
+  title: 'Beacon | Build Forward',
   description:
     'We design and build custom systems that transform how businesses operate - turning complexity into clarity, and ideas into scalable solutions.',
   keywords: ['software studio', 'web development', 'design', 'engineering', 'startup', 'SaaS'],
   openGraph: {
-    title: 'Beacon — Build Forward',
+    title: 'Beacon | Build Forward',
     description: 'From bold ideas to production-ready products. We build forward.',
     type: 'website',
   },

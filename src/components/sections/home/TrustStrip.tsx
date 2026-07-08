@@ -1,5 +1,7 @@
 'use client';
 
+import Reveal from '@/components/ui/Reveal';
+
 const audiences = [
   {
     label: 'Enterprises',
@@ -46,14 +48,15 @@ export default function TrustStrip() {
           Built for businesses that want to scale
         </p>
         <div className="flex flex-wrap items-center justify-center gap-x-10 gap-y-6 sm:gap-x-16">
-          {audiences.map((a) => (
-            <div
+          {audiences.map((a, i) => (
+            <Reveal
               key={a.label}
+              delay={i * 80}
               className="flex items-center gap-3 text-muted-foreground hover:text-foreground transition-colors duration-300"
             >
               <span className="text-primary/70">{a.icon}</span>
               <span className="font-semibold text-base tracking-wide">{a.label}</span>
-            </div>
+            </Reveal>
           ))}
         </div>
       </div>

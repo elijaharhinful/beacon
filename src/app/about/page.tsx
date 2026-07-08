@@ -8,32 +8,15 @@ export const metadata: Metadata = {
 };
 
 const approachPoints = [
-  {
-    num: '01',
-    title: 'Understand deeply',
-    desc: 'We begin by understanding how your business works - its structure, its challenges, and its goals. From there, we design systems that are not only functional, but aligned with how your organization operates.',
-  },
-  {
-    num: '02',
-    title: 'Design with purpose',
-    desc: 'Every system we build is guided by a clear and deliberate approach. We focus on creating solutions that are impactful, improving efficiency, enhancing visibility, and enabling growth.',
-  },
-  {
-    num: '03',
-    title: 'Build with precision',
-    desc: 'We build with precision, ensuring performance, reliability, and scalability at every stage. We do not rely on generic templates, we engineer systems specifically for your operational needs.',
-  },
-  {
-    num: '04',
-    title: 'Scale continuously',
-    desc: 'As your business evolves, we continue to refine and support the systems we create, ensuring they adapt and scale to meet new challenges and expanded requirements.',
-  },
+  { num: '01', title: 'Understand deeply' },
+  { num: '02', title: 'Design with purpose' },
+  { num: '03', title: 'Build with precision' },
+  { num: '04', title: 'Scale continuously' },
 ];
 
 const beliefs = [
   {
-    title: 'Architecture First',
-    desc: 'We believe that technology should simplify complexity, not add to it. A well-designed foundation is critical for any system to scale successfully.',
+    desc: 'We believe that technology should simplify complexity, not add to it.',
     icon: (
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
         <path d="M12 2L2 22h20L12 2z"/>
@@ -42,18 +25,7 @@ const beliefs = [
     ),
   },
   {
-    title: 'Precision Over Speed',
-    desc: 'We build systems that are not only effective today, but adaptable for tomorrow. We move methodically. A well-built system requires fewer fixes and scales naturally.',
-    icon: (
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-        <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
-        <path d="M3 9h18M9 21V9"/>
-      </svg>
-    ),
-  },
-  {
-    title: 'Clarity Through Structure',
-    desc: 'Complex problems demand simple, elegant, and modular solutions. We believe that every business is unique, and the systems that power it should reflect that.',
+    desc: 'We believe that every business is unique, and the systems that power it should reflect that.',
     icon: (
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
         <polygon points="12 2 2 7 12 12 22 7 12 2"/>
@@ -63,12 +35,11 @@ const beliefs = [
     ),
   },
   {
-    title: 'Uncompromising Security',
-    desc: 'Security is not an add-on; it is woven into the foundational layer of every project we build, ensuring your data and operations remain protected.',
+    desc: 'We believe in building solutions that are not only effective today, but adaptable for tomorrow.',
     icon: (
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-        <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
-        <path d="M7 11V7a5 5 0 0110 0v4"/>
+        <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
+        <path d="M3 9h18M9 21V9"/>
       </svg>
     ),
   },
@@ -94,7 +65,7 @@ export default function AboutPage() {
       {/* Mission & Vision */}
       <section className="py-12 px-6">
         <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6">
-          <div className="bg-gradient-to-br from-[#00d4aa]/10 to-[#0a0d0f] border border-white/5 p-10 lg:p-16 rounded-2xl relative overflow-hidden group">
+          <div className="bg-[#0d1117] border border-white/5 p-10 lg:p-16 rounded-2xl relative overflow-hidden group">
             <div className="absolute top-0 right-0 p-8 opacity-20 text-[#00d4aa] group-hover:scale-110 group-hover:opacity-40 transition-all duration-500">
                <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1">
                  <path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/>
@@ -107,7 +78,7 @@ export default function AboutPage() {
             </p>
           </div>
           
-          <div className="bg-gradient-to-br from-[#f59e0b]/10 to-[#0a0d0f] border border-white/5 p-10 lg:p-16 rounded-2xl relative overflow-hidden group">
+          <div className="bg-[#0d1117] border border-white/5 p-10 lg:p-16 rounded-2xl relative overflow-hidden group">
             <div className="absolute top-0 right-0 p-8 opacity-20 text-[#f59e0b] group-hover:scale-110 group-hover:opacity-40 transition-all duration-500">
                <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1">
                  <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
@@ -137,14 +108,13 @@ export default function AboutPage() {
           
           <div className="lg:w-2/3">
             <h2 className="text-3xl font-bold text-white mb-8">What We Believe</h2>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div className="grid grid-cols-1 gap-4">
               {beliefs.map((belief, i) => (
-                <div key={i} className="bg-[#101419] p-8 rounded-xl border border-white/5 hover:border-white/10 transition-colors">
-                  <div className="flex items-center gap-3 mb-4 text-[#00d4aa]">
+                <div key={i} className="bg-[#101419] p-8 rounded-xl border border-white/5 hover:border-white/10 transition-colors flex items-center gap-4">
+                  <div className="text-[#00d4aa] shrink-0">
                     {belief.icon}
-                    <h3 className="text-white font-semibold text-lg">{belief.title}</h3>
                   </div>
-                  <p className="text-gray-400 text-sm leading-relaxed">{belief.desc}</p>
+                  <p className="text-gray-400 leading-relaxed">{belief.desc}</p>
                 </div>
               ))}
             </div>
@@ -168,8 +138,7 @@ export default function AboutPage() {
                 <div className="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center text-[#00d4aa] text-sm font-bold tracking-widest mb-6">
                   {pt.num}
                 </div>
-                <h3 className="text-white font-bold text-xl mb-4">{pt.title}</h3>
-                <p className="text-gray-400 text-sm leading-relaxed">{pt.desc}</p>
+                <h3 className="text-white font-bold text-xl">{pt.title}</h3>
               </div>
             ))}
           </div>
