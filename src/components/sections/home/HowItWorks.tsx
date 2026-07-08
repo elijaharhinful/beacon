@@ -57,41 +57,25 @@ export default function HowItWorks() {
 
         {/* Steps on a connector line */}
         <div className="relative">
-          {/* Horizontal connector (desktop) */}
-          <div className="hidden lg:block absolute top-8 left-[12.5%] right-[12.5%] h-px bg-border" />
-
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-6">
-            {steps.map((step, i) => {
-              const active = i === steps.length - 1;
-              return (
-                <Reveal key={i} delay={i * 110} className="relative flex flex-col items-center text-center">
-                  {/* Icon badge */}
-                  <div
-                    className={`relative z-10 w-16 h-16 rounded-full flex items-center justify-center border transition-colors duration-300 ${
-                      active
-                        ? 'bg-primary/10 border-primary/50 text-primary'
-                        : 'bg-card border-border text-muted-foreground'
-                    }`}
-                  >
-                    {step.icon}
-                  </div>
+            {steps.map((step, i) => (
+              <Reveal key={i} delay={i * 110} className="relative flex flex-col items-center text-center">
+                {/* Icon badge */}
+                <div className="relative z-10 w-16 h-16 rounded-full flex items-center justify-center border bg-primary/10 border-primary/50 text-primary transition-colors duration-300">
+                  {step.icon}
+                </div>
 
-                  <span
-                    className={`mt-6 text-[0.7rem] font-semibold tracking-[0.2em] ${
-                      active ? 'text-primary' : 'text-muted-foreground/60'
-                    }`}
-                  >
-                    {step.step}
-                  </span>
-                  <h3 className={`mt-2 font-bold text-lg ${active ? 'text-primary' : 'text-foreground'}`}>
-                    {step.title}
-                  </h3>
-                  <p className="mt-2 text-muted-foreground text-sm leading-relaxed max-w-[16rem]">
-                    {step.desc}
-                  </p>
-                </Reveal>
-              );
-            })}
+                <span className="mt-6 text-[0.7rem] font-semibold tracking-[0.2em] text-foreground">
+                  {step.step}
+                </span>
+                <h3 className="mt-2 font-bold text-lg text-primary">
+                  {step.title}
+                </h3>
+                <p className="mt-2 text-muted-foreground text-sm leading-relaxed max-w-[16rem]">
+                  {step.desc}
+                </p>
+              </Reveal>
+            ))}
           </div>
         </div>
       </div>
