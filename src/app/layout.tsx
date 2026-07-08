@@ -12,7 +12,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: 'Beacon — Build Forward',
+  title: 'Beacon | Build Forward',
   description: 'Beacon is a software studio that designs and engineers high-performance digital products.',
 };
 

@@ -3,7 +3,7 @@ import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
 
 export const metadata: Metadata = {
-  title: 'About — BEACON',
+  title: 'Beacon | About',
   description: 'BEACON is a technology company focused on designing and building custom systems that power modern businesses.',
 };
 
@@ -51,7 +51,7 @@ export default function AboutPage() {
       <Navbar />
 
       {/* Hero */}
-      <section className="pt-32 pb-16 px-6 lg:pt-40 lg:pb-24">
+      <section className="pt-32 pb-16 px-9 lg:px-[4.5rem] lg:pt-40 lg:pb-24">
         <div className="max-w-7xl mx-auto text-center">
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black text-white leading-tight mb-8">
             About BEACON
@@ -63,7 +63,7 @@ export default function AboutPage() {
       </section>
 
       {/* Mission & Vision */}
-      <section className="py-12 px-6">
+      <section className="py-12 px-9 lg:px-[4.5rem]">
         <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6">
           <div className="bg-[#0d1117] border border-white/5 p-10 lg:p-16 rounded-2xl relative overflow-hidden group">
             <div className="absolute top-0 right-0 p-8 opacity-20 text-[#00d4aa] group-hover:scale-110 group-hover:opacity-40 transition-all duration-500">
@@ -94,7 +94,7 @@ export default function AboutPage() {
       </section>
 
       {/* What We Do / What We Believe */}
-      <section className="py-24 px-6 bg-[#0d1117] border-y border-white/5">
+      <section className="py-24 px-9 lg:px-[4.5rem] bg-[#0d1117] border-y border-white/5">
         <div className="max-w-7xl mx-auto flex flex-col lg:flex-row gap-16">
           <div className="lg:w-1/3">
             <h2 className="text-3xl font-bold text-white mb-6">What We Do</h2>
@@ -123,7 +123,7 @@ export default function AboutPage() {
       </section>
 
       {/* Our Approach */}
-      <section className="py-24 px-6">
+      <section className="py-24 px-9 lg:px-[4.5rem]">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-3xl font-bold text-white mb-6">Our Approach</h2>
@@ -146,7 +146,7 @@ export default function AboutPage() {
       </section>
 
       {/* Quote */}
-      <section className="py-32 px-6 text-center bg-[#0d1117] border-t border-white/5">
+      <section className="py-32 px-9 lg:px-[4.5rem] text-center bg-[#0d1117] border-t border-white/5">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-medium text-white leading-tight mb-8">
             &ldquo;BEACON is not just about building software. It is about building systems that move businesses forward.&rdquo;

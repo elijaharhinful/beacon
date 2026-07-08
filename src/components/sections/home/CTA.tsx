@@ -5,7 +5,7 @@ import Reveal from '@/components/ui/Reveal';
 
 export default function CTA() {
   return (
-    <section className="relative bg-[#0d1117] py-28 px-6 overflow-hidden">
+    <section className="relative bg-[#0d1117] py-28 px-9 lg:px-[4.5rem] overflow-hidden">
       {/* Dot grid */}
       <div
         className="absolute inset-0 opacity-10"

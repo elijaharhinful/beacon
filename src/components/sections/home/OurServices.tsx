@@ -38,7 +38,7 @@ const services = [
 
 export default function OurServices() {
   return (
-    <section id="about" className="bg-[#0a0d0f] py-24 px-6">
+    <section id="about" className="bg-[#0a0d0f] py-24 px-9 lg:px-[4.5rem]">
       <div className="max-w-7xl mx-auto">
         <Reveal className="text-center mb-16">
           <h2 className="text-4xl lg:text-5xl font-black text-white mb-4">How We Build</h2>

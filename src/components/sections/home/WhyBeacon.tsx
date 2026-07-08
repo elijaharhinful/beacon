@@ -11,10 +11,10 @@ const reasons = [
 
 export default function WhyBeacon() {
   return (
-    <section className="bg-[#0d1117] py-24 px-6">
+    <section className="bg-[#0d1117] py-24 px-9 lg:px-[4.5rem]">
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-          {/* Left — reasons */}
+          {/* Left - reasons */}
           <Reveal direction="right">
             <h2 className="text-4xl lg:text-5xl font-black text-white leading-tight mb-6">
               Why BEACON
@@ -41,7 +41,7 @@ export default function WhyBeacon() {
             </div>
           </Reveal>
 
-          {/* Right — image */}
+          {/* Right - image */}
           <Reveal direction="left" delay={120} className="relative">
             <div className="relative rounded-2xl overflow-hidden aspect-[4/5] bg-[#141b22]">
               {/* Abstract tech pattern */}

@@ -3,18 +3,26 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+import { usePathname } from 'next/navigation';
 import { useScroll } from '@/hooks/use-scroll';
 import { Button } from '@/components/ui/Button';
 
+function isActive(pathname: string, href: string) {
+  return href === '/' ? pathname === '/' : pathname.startsWith(href);
+}
+
 export default function Navbar() {
   const scrolled = useScroll(20);
+  const pathname = usePathname();
   const [mobileOpen, setMobileOpen] = useState(false);
 
   const links = [
+    { name: 'Home', href: '/' },
     { name: 'Solutions', href: '/solutions' },
     { name: 'Services', href: '/services' },
     { name: 'Projects', href: '/projects' },
     { name: 'About', href: '/about' },
+    { name: 'Contact', href: '/contact' },
   ];
 
   return (
@@ -23,7 +31,7 @@ export default function Navbar() {
         scrolled ? 'bg-[#0a0d0f]/95 backdrop-blur-md shadow-lg shadow-black/30' : 'bg-transparent'
       }`}
     >
-      <div className="max-w-7xl mx-auto px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-9 lg:px-[4.5rem]">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2 group">
@@ -43,7 +51,12 @@ export default function Navbar() {
               <Link
                 key={link.name}
                 href={link.href}
-                className="text-gray-400 hover:text-white text-sm font-medium transition-colors duration-200"
+                aria-current={isActive(pathname, link.href) ? 'page' : undefined}
+                className={`text-sm font-medium transition-colors duration-200 ${
+                  isActive(pathname, link.href)
+                    ? 'text-[#00d4aa]'
+                    : 'text-gray-400 hover:text-white'
+                }`}
               >
                 {link.name}
               </Link>
@@ -83,7 +96,12 @@ export default function Navbar() {
             <Link
               key={link.name}
               href={link.href}
-              className="text-gray-400 hover:text-white text-sm font-medium py-1 transition-colors"
+              aria-current={isActive(pathname, link.href) ? 'page' : undefined}
+              className={`text-sm font-medium py-1 transition-colors ${
+                isActive(pathname, link.href)
+                  ? 'text-[#00d4aa]'
+                  : 'text-gray-400 hover:text-white'
+              }`}
               onClick={() => setMobileOpen(false)}
             >
               {link.name}

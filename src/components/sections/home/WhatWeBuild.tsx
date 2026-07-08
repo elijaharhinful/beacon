@@ -65,7 +65,7 @@ const services = [
 
 export default function WhatWeBuild() {
   return (
-    <section id="services" className="bg-[#0a0d0f] py-24 px-6">
+    <section id="services" className="bg-[#0a0d0f] py-24 px-9 lg:px-[4.5rem]">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <Reveal className="max-w-3xl mx-auto text-center mb-16">

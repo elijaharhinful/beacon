@@ -2,8 +2,14 @@
 
 import Link from 'next/link';
 import Image from 'next/image';
+import { usePathname } from 'next/navigation';
+
+function isActive(pathname: string, href: string) {
+  return href === '/' ? pathname === '/' : pathname.startsWith(href);
+}
 
 const navLinks = [
+  { label: 'Home', href: '/' },
   { label: 'Solutions', href: '/solutions' },
   { label: 'Services', href: '/services' },
   { label: 'Projects', href: '/projects' },
@@ -59,12 +65,13 @@ const socialLinks = [
 ];
 
 export default function Footer() {
+  const pathname = usePathname();
   return (
-    <footer className="bg-[#070a0c] border-t border-white/5 pt-16 pb-8 px-6">
+    <footer className="bg-[#070a0c] border-t border-white/5 pt-16 pb-8 px-9 lg:px-[4.5rem]">
       <div className="max-w-7xl mx-auto">
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-12 mb-16">
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-12 sm:gap-16 mb-16">
           {/* Brand */}
-          <div className="lg:col-span-1">
+          <div>
             <Link href="/" className="flex items-center gap-2 mb-4">
               <Image 
                 src="/images/beacon_landscape_no_bg.png" 
@@ -100,7 +107,12 @@ export default function Footer() {
                 <li key={l.label}>
                   <Link
                     href={l.href}
-                    className="text-gray-500 hover:text-white text-sm transition-colors duration-200"
+                    aria-current={isActive(pathname, l.href) ? 'page' : undefined}
+                    className={`text-sm transition-colors duration-200 ${
+                      isActive(pathname, l.href)
+                        ? 'text-[#00d4aa]'
+                        : 'text-gray-500 hover:text-white'
+                    }`}
                   >
                     {l.label}
                   </Link>

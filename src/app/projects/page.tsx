@@ -5,7 +5,7 @@ import { Card, CardContent } from '@/components/ui/Card';
 import { Button } from '@/components/ui/Button';
 
 export const metadata: Metadata = {
-  title: 'Projects — BEACON',
+  title: 'Beacon | Projects',
   description: 'A selection of systems we\'ve designed and built - each solving real-world challenges.',
 };
 
@@ -43,7 +43,7 @@ export default function ProjectsPage() {
       <Navbar />
 
       {/* Hero */}
-      <section className="pt-32 pb-16 px-6 lg:pt-40 lg:pb-24 border-b border-white/5 bg-[#0a0d0f]">
+      <section className="pt-32 pb-16 px-9 lg:px-[4.5rem] lg:pt-40 lg:pb-24 border-b border-white/5 bg-[#0a0d0f]">
         <div className="max-w-7xl mx-auto">
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black text-white leading-tight mb-6">
             Projects
@@ -55,7 +55,7 @@ export default function ProjectsPage() {
       </section>
 
       {/* Grid */}
-      <section className="py-24 px-6 bg-[#0d1117]">
+      <section className="py-24 px-9 lg:px-[4.5rem] bg-[#0d1117]">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {projects.map((project, i) => (
@@ -104,7 +104,7 @@ export default function ProjectsPage() {
       </section>
 
       {/* Approach */}
-      <section className="py-24 px-6 bg-[#0a0d0f]">
+      <section className="py-24 px-9 lg:px-[4.5rem] bg-[#0a0d0f]">
         <div className="max-w-7xl mx-auto">
           <h2 className="text-3xl font-bold text-white mb-12">Our Approach to Projects</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
@@ -128,7 +128,7 @@ export default function ProjectsPage() {
       </section>
 
       {/* Footer Banner */}
-      <section className="py-24 px-6 text-center border-t border-white/5 bg-[#0d1117]">
+      <section className="py-24 px-9 lg:px-[4.5rem] text-center border-t border-white/5 bg-[#0d1117]">
         <h2 className="text-3xl md:text-4xl font-bold text-white leading-tight mb-2">
           Real systems. Real impact.
         </h2>

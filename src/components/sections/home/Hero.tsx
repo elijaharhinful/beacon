@@ -36,7 +36,7 @@ export default function Hero() {
       {/* Soft radial glow, top-center emerging from darkness */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/3 w-[1100px] h-[700px] bg-[#00d4aa]/8 rounded-full blur-[160px] pointer-events-none" />
 
-      <div className="relative z-10 max-w-4xl mx-auto px-6 text-center">
+      <div className="relative z-10 max-w-4xl mx-auto px-9 lg:px-[4.5rem] text-center">
 
         {/* Eyebrow */}
         <Reveal as="p" delay={100} className="text-primary/80 text-xs sm:text-sm font-semibold tracking-[0.35em] uppercase mb-6">

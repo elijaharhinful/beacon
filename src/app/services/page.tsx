@@ -3,7 +3,7 @@ import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
 
 export const metadata: Metadata = {
-  title: 'Services — BEACON',
+  title: 'Beacon | Services',
   description: 'Our services provide the technical foundation that brings your systems to life.',
 };
 
@@ -55,7 +55,7 @@ export default function ServicesPage() {
       <Navbar />
       
       {/* Hero */}
-      <section className="pt-32 pb-16 px-6 lg:pt-40 lg:pb-24">
+      <section className="pt-32 pb-16 px-9 lg:px-[4.5rem] lg:pt-40 lg:pb-24">
         <div className="max-w-7xl mx-auto">
           <p className="text-[#00d4aa] text-xs font-semibold tracking-widest uppercase mb-6 border border-[#00d4aa]/30 px-3 py-1 rounded-full w-fit">
             Services
@@ -70,7 +70,7 @@ export default function ServicesPage() {
       </section>
 
       {/* Services List */}
-      <section className="py-12 px-6">
+      <section className="py-12 px-9 lg:px-[4.5rem]">
         <div className="max-w-7xl mx-auto flex flex-col gap-8">
           {services.map((service, i) => (
             <div key={i} className={`flex flex-col ${i % 2 !== 0 ? 'lg:flex-row-reverse' : 'lg:flex-row'} bg-[#0d1117] rounded-2xl overflow-hidden border border-white/5`}>
@@ -107,7 +107,7 @@ export default function ServicesPage() {
       </section>
 
       {/* How We Deliver */}
-      <section className="py-24 px-6 bg-[#0a0d0f]">
+      <section className="py-24 px-9 lg:px-[4.5rem] bg-[#0a0d0f]">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-3xl font-bold text-white mb-4">How We Deliver</h2>
@@ -127,7 +127,7 @@ export default function ServicesPage() {
       </section>
 
       {/* Footer Banner */}
-      <section className="py-32 px-6 text-center border-t border-white/5 bg-[#0d1117]">
+      <section className="py-32 px-9 lg:px-[4.5rem] text-center border-t border-white/5 bg-[#0d1117]">
         <h2 className="text-4xl md:text-5xl font-black text-white leading-tight mb-2">
           Technology built with precision.
         </h2>

@@ -25,7 +25,7 @@ const projects = [
 
 export default function FeaturedProjects() {
   return (
-    <section id="projects" className="bg-card py-24 px-6">
+    <section id="projects" className="bg-card py-24 px-9 lg:px-[4.5rem]">
       <div className="max-w-7xl mx-auto">
         <Reveal className="flex flex-col items-center text-center gap-4 mb-14">
           <h2 className="text-4xl lg:text-5xl font-black text-foreground leading-tight">
@@ -36,7 +36,7 @@ export default function FeaturedProjects() {
           </p>
         </Reveal>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
           {projects.map((project, i) => (
             <Reveal key={i} delay={(i % 2) * 100}>
               <Card>

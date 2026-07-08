@@ -3,7 +3,7 @@ import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
 
 export const metadata: Metadata = {
-  title: 'Contact — BEACON',
+  title: 'Beacon | Contact',
   description: 'Tell us about your project in the way that works best for you.',
 };
 
@@ -60,7 +60,7 @@ export default function ContactPage() {
       <Navbar />
 
       {/* Hero */}
-      <section className="pt-32 pb-16 px-6 lg:pt-40 lg:pb-24 border-b border-white/5 bg-[#0a0d0f]">
+      <section className="pt-32 pb-16 px-9 lg:px-[4.5rem] lg:pt-40 lg:pb-24 border-b border-white/5 bg-[#0a0d0f]">
         <div className="max-w-4xl mx-auto text-center">
           <h1 className="text-5xl sm:text-6xl lg:text-7xl font-black text-white leading-tight mb-8">
             GET IN <span className="text-[#00d4aa]">TOUCH</span>
@@ -72,7 +72,7 @@ export default function ContactPage() {
       </section>
 
       {/* Contact Section */}
-      <section className="py-24 px-6 bg-[#0d1117]">
+      <section className="py-24 px-9 lg:px-[4.5rem] bg-[#0d1117]">
         <div className="max-w-7xl mx-auto flex flex-col lg:flex-row gap-16">
           
           {/* Left Column: Connect Options */}
@@ -187,7 +187,7 @@ export default function ContactPage() {
       </section>
 
       {/* Our Commitment */}
-      <section className="py-24 px-6 border-t border-white/5 bg-[#0a0d0f]">
+      <section className="py-24 px-9 lg:px-[4.5rem] border-t border-white/5 bg-[#0a0d0f]">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-3xl font-bold text-white mb-6 uppercase tracking-widest">
             Our Commitment

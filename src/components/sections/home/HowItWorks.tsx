@@ -49,7 +49,7 @@ const steps = [
 
 export default function HowItWorks() {
   return (
-    <section className="bg-background py-24 px-6">
+    <section className="bg-background py-24 px-9 lg:px-[4.5rem]">
       <div className="max-w-6xl mx-auto">
         <Reveal className="text-center mb-20">
           <h2 className="text-4xl lg:text-5xl font-black text-foreground">How It Works</h2>

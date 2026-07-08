@@ -43,7 +43,7 @@ const audiences = [
 export default function TrustStrip() {
   return (
     <section className="relative bg-card border-y border-border py-14">
-      <div className="max-w-7xl mx-auto px-6">
+      <div className="max-w-7xl mx-auto px-9 lg:px-[4.5rem]">
         <p className="text-muted-foreground text-xs font-semibold tracking-[0.2em] uppercase text-center mb-8">
           Built for businesses that want to scale
         </p>
