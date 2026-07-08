@@ -8,7 +8,7 @@ import { Button } from '@/components/ui/Button';
 const partners = [
   { name: 'SquareFix', logo: '/images/partners/squarefix.png' },
   { name: 'Doxa Sensations', logo: '/images/partners/doxa.png', invertLogo: true },
-  { name: 'Vivid Studios', logo: '/images/partners/vivid.svg' },
+  { name: 'VizDen Studios', logo: '/images/partners/vizden.png', invertLogo: true },
 ];
 
 export default function Partners() {

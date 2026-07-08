@@ -42,13 +42,14 @@ const partners: Partner[] = [
     ],
   },
   {
-    name: 'Vivid Studios',
-    logo: '/images/partners/vivid.svg',
-    href: 'https://vividstudiosglobal.com',
-    displayUrl: 'www.vividstudiosglobal.com',
+    name: 'VizDen Studios',
+    logo: '/images/partners/vizden.png',
+    invertLogo: true,
+    href: 'https://www.vizdenstudios.com',
+    displayUrl: 'www.vizdenstudios.com',
     copy: [
-      'Vivid Studios specializes in multimedia production, design, and digital content creation.',
-      'Their work enhances how products and systems are presented, helping clients communicate their solutions effectively through high-quality visuals and media.',
+      'VizDen Studios is an AI film studio crafting cinematic videos, commercials, brand mini-series, and memorial tribute films for audiences across Africa and the world.',
+      'Their cognitive storytelling and high-end visual production elevate how products and systems are presented, helping clients communicate their solutions through striking, cinematic media.',
     ],
   },
 ];
