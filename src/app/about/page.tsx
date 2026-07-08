@@ -180,7 +180,7 @@ export default function AboutPage() {
       <section className="py-32 px-6 text-center bg-[#0d1117] border-t border-white/5">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-medium text-white leading-tight mb-8">
-            "BEACON is not just about building software. It is about building systems that move businesses forward."
+            &ldquo;BEACON is not just about building software. It is about building systems that move businesses forward.&rdquo;
           </h2>
           <p className="text-[#00d4aa] font-bold tracking-widest uppercase">
             Build Forward.

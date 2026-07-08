@@ -6,11 +6,25 @@ export default function Hero() {
   return (
     <section
       id="home"
-      className="relative min-h-screen flex items-center justify-center overflow-hidden bg-[#0a0d0f]"
+      className="relative min-h-screen flex items-center justify-center overflow-hidden bg-background"
     >
+      {/* Background video */}
+      <video
+        className="absolute inset-0 w-full h-full object-cover pointer-events-none"
+        src="/videos/abstract_space.webm"
+        autoPlay
+        loop
+        muted
+        playsInline
+        aria-hidden="true"
+      />
+
+      {/* Darken video for legibility */}
+      <div className="absolute inset-0 bg-[#0a0d0f]/60 pointer-events-none" />
+
       {/* Background gradient grid */}
       <div
-        className="absolute inset-0 opacity-20"
+        className="absolute inset-0 opacity-[0.06]"
         style={{
           backgroundImage:
             'linear-gradient(rgba(0,212,170,0.06) 1px, transparent 1px), linear-gradient(90deg, rgba(0,212,170,0.06) 1px, transparent 1px)',
@@ -18,14 +32,19 @@ export default function Hero() {
         }}
       />
 
-      {/* Radial glow emerging from the right */}
-      <div className="absolute top-1/2 right-0 translate-x-1/4 -translate-y-1/2 w-[1000px] h-[800px] bg-[#00d4aa]/10 rounded-full blur-[150px] pointer-events-none animate-pulse" />
+      {/* Soft radial glow, top-center emerging from darkness */}
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/3 w-[1100px] h-[700px] bg-[#00d4aa]/8 rounded-full blur-[160px] pointer-events-none" />
 
       <div className="relative z-10 max-w-4xl mx-auto px-6 text-center">
 
+        {/* Eyebrow */}
+        <p className="text-primary/80 text-xs sm:text-sm font-semibold tracking-[0.35em] uppercase mb-6">
+          BEACON
+        </p>
+
         {/* Headline */}
         <h1 className="text-5xl sm:text-6xl lg:text-7xl font-black text-white leading-[1.05] tracking-tight mb-6">
-          BEACON <br className="hidden sm:block" /> Build{' '}
+          Build{' '}
           <span className="relative">
             <span className="text-[#00d4aa]">Forward.</span>
             <svg
@@ -57,12 +76,12 @@ export default function Hero() {
             View Our Work
           </Button>
         </div>
+      </div>
 
-        {/* Scroll indicator */}
-        <div className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 opacity-40">
-          <span className="text-xs text-gray-500 tracking-widest uppercase">Scroll</span>
-          <div className="w-px h-12 bg-gradient-to-b from-gray-500 to-transparent" />
-        </div>
+      {/* Scroll indicator (section-anchored so it sits at the viewport bottom) */}
+      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-2 opacity-40">
+        <span className="text-xs text-gray-500 tracking-widest uppercase">Scroll</span>
+        <div className="w-px h-12 bg-linear-to-b from-gray-500 to-transparent" />
       </div>
     </section>
   );

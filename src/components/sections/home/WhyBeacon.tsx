@@ -21,7 +21,7 @@ export default function WhyBeacon() {
               Why BEACON
             </h2>
             <div className="text-gray-400 text-base leading-relaxed mb-12 max-w-xl">
-              <p className="mb-4">We don't just build software. We build systems that redefine how your business operates.</p>
+              <p className="mb-4">We don&apos;t just build software. We build systems that redefine how your business operates.</p>
               <p>Every solution is designed with precision - aligned with your structure, your goals, and your future.</p>
             </div>
 

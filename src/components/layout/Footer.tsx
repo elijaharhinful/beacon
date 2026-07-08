@@ -67,7 +67,7 @@ export default function Footer() {
               />
             </Link>
             <p className="text-gray-500 text-sm leading-relaxed mb-6">
-              We build the digital products that define tomorrow's companies.
+              We build the digital products that define tomorrow&apos;s companies.
             </p>
             {/* Socials */}
             <div className="flex items-center gap-3">
@@ -133,7 +133,7 @@ export default function Footer() {
         {/* Bottom bar */}
         <div className="border-t border-white/5 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-gray-600 text-xs">
-            © {new Date().getFullYear()} Beacon Studio. All rights reserved.
+            © {new Date().getFullYear()} BEACON. All rights reserved.
           </p>
           <div className="flex items-center gap-6 text-xs text-gray-600">
             <a className="hover:text-gray-400 transition-colors cursor-pointer">Privacy Policy</a>

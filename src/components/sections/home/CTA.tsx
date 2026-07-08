@@ -19,14 +19,14 @@ export default function CTA() {
 
       <div className="relative z-10 max-w-3xl mx-auto text-center">
         <p className="text-[#00d4aa] text-xs font-semibold tracking-widest uppercase mb-6">
-          Let's Build Together
+          Let&apos;s Build Together
         </p>
         <h2 className="text-4xl sm:text-5xl lg:text-6xl font-black text-white leading-tight mb-6">
           Ready to Build{' '}
           <span className="text-[#00d4aa]">Forward?</span>
         </h2>
         <p className="text-gray-400 text-lg leading-relaxed mb-10 max-w-xl mx-auto">
-          Let's design a system that transforms your business and supports your growth.
+          Let&apos;s design a system that transforms your business and supports your growth.
         </p>
 
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">

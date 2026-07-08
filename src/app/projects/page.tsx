@@ -59,7 +59,7 @@ export default function ProjectsPage() {
             PROJECTS / PORTFOLIO
           </h1>
           <p className="text-gray-400 text-lg leading-relaxed max-w-2xl">
-            A selection of systems we've designed and built - each solving real-world challenges through thoughtful design and precise execution.
+            A selection of systems we&apos;ve designed and built - each solving real-world challenges through thoughtful design and precise execution.
           </p>
         </div>
       </section>
@@ -126,7 +126,7 @@ export default function ProjectsPage() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
             <div>
               <p className="text-gray-400 leading-relaxed">
-                Each system we build is driven by a clear understanding of the client's needs and operational structure.
+                Each system we build is driven by a clear understanding of the client&apos;s needs and operational structure.
               </p>
             </div>
             <div>

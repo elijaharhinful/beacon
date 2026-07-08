@@ -67,6 +67,11 @@ screenshots/      scratch output, git-ignored
 - Server state: TanStack Query. Client/UI state: Zustand (theme, toasts, etc.).
 - Accessibility: semantic HTML, labels tied to inputs, visible focus, keyboard
   nav, adequate contrast.
+- Cursors: every clickable element (buttons, links, cards, tabs, toggles, menu
+  items, anything with an `onClick`) must show `cursor-pointer`; disabled states
+  use `cursor-not-allowed`. Tailwind v4 no longer sets this by default, so it is
+  explicit. Bake it into the shared primitive (Button, interactive Card) so
+  call sites inherit it rather than repeating the class.
 - Responsive: design mobile + desktop; verify with `--mobile` / `--tablet` shots.
 
 ## Screenshot workflow (visual build loop)
