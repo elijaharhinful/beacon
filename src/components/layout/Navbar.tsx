@@ -4,8 +4,10 @@ import { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
+import { useSession } from 'next-auth/react';
 import { useScroll } from '@/hooks/use-scroll';
 import { Button } from '@/components/ui/Button';
+import { Role } from '@/lib/roles';
 
 function isActive(pathname: string, href: string) {
   return href === '/' ? pathname === '/' : pathname.startsWith(href);
@@ -15,6 +17,8 @@ export default function Navbar() {
   const scrolled = useScroll(20);
   const pathname = usePathname();
   const [mobileOpen, setMobileOpen] = useState(false);
+  const { data: session } = useSession();
+  const dashboardHref = session?.user.role === Role.ADMIN ? '/admin' : '/work-progress/dashboard';
 
   const links = [
     { name: 'Home', href: '/' },
@@ -23,6 +27,7 @@ export default function Navbar() {
     { name: 'Projects', href: '/projects' },
     { name: 'Partners', href: '/partners' },
     { name: 'About', href: '/about' },
+    { name: 'Work Progress', href: '/work-progress' },
     { name: 'Contact', href: '/contact' },
   ];
 
@@ -66,9 +71,15 @@ export default function Navbar() {
 
           {/* CTA */}
           <div className="hidden md:flex items-center gap-4">
-            <Button variant="default" size="sm">
-              Get Started
-            </Button>
+            {session ? (
+              <Button asChild variant="default" size="sm">
+                <Link href={dashboardHref}>Dashboard</Link>
+              </Button>
+            ) : (
+              <Button asChild variant="default" size="sm">
+                <Link href="/login">Client Login</Link>
+              </Button>
+            )}
           </div>
 
           {/* Mobile burger */}
@@ -108,8 +119,10 @@ export default function Navbar() {
               {link.name}
             </Link>
           ))}
-          <Button variant="default" size="sm" className="w-full mt-2">
-            Get Started
+          <Button asChild variant="default" size="sm" className="w-full mt-2">
+            <Link href={session ? dashboardHref : '/login'} onClick={() => setMobileOpen(false)}>
+              {session ? 'Dashboard' : 'Client Login'}
+            </Link>
           </Button>
         </div>
       )}
