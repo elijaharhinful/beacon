@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { Suspense, useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { useRouter, useSearchParams } from 'next/navigation';
@@ -19,7 +19,7 @@ const loginSchema = z.object({
 
 type LoginValues = z.infer<typeof loginSchema>;
 
-export default function LoginPage() {
+function LoginForm() {
   const router = useRouter();
   const searchParams = useSearchParams();
   const [serverError, setServerError] = useState<string | null>(null);
@@ -57,6 +57,73 @@ export default function LoginPage() {
   };
 
   return (
+    <div className="rounded-2xl border border-white/5 bg-[#0d1117] p-8 shadow-lg shadow-black/30">
+      <h1 className="text-2xl font-black text-white mb-1">Client Login</h1>
+      <p className="text-gray-500 text-sm mb-8">Access your Work Progress dashboard.</p>
+
+      <form onSubmit={handleSubmit(onSubmit)} className="space-y-5" noValidate>
+        <div>
+          <label htmlFor="email" className="block text-sm font-medium text-gray-300 mb-2">
+            Email
+          </label>
+          <input
+            id="email"
+            type="email"
+            autoComplete="email"
+            {...register('email')}
+            className="w-full rounded-lg border border-white/10 bg-[#0a0d0f] px-4 py-2.5 text-white placeholder-gray-600 outline-none transition-colors focus:border-[#00d4aa]/60"
+            placeholder="you@company.com"
+          />
+          {errors.email && <p className="mt-1.5 text-sm text-red-400">{errors.email.message}</p>}
+        </div>
+
+        <div>
+          <label htmlFor="password" className="block text-sm font-medium text-gray-300 mb-2">
+            Password
+          </label>
+          <input
+            id="password"
+            type="password"
+            autoComplete="current-password"
+            {...register('password')}
+            className="w-full rounded-lg border border-white/10 bg-[#0a0d0f] px-4 py-2.5 text-white placeholder-gray-600 outline-none transition-colors focus:border-[#00d4aa]/60"
+            placeholder="Your password"
+          />
+          {errors.password && (
+            <p className="mt-1.5 text-sm text-red-400">{errors.password.message}</p>
+          )}
+        </div>
+
+        {serverError && (
+          <div className="rounded-lg border border-red-500/20 bg-red-500/10 px-4 py-2.5 text-sm text-red-400">
+            {serverError}
+          </div>
+        )}
+
+        <Button type="submit" size="lg" className="w-full" disabled={isSubmitting}>
+          {isSubmitting ? 'Signing in...' : 'Sign In'}
+        </Button>
+      </form>
+    </div>
+  );
+}
+
+function LoginFormFallback() {
+  return (
+    <div className="rounded-2xl border border-white/5 bg-[#0d1117] p-8 shadow-lg shadow-black/30">
+      <div className="h-8 w-40 rounded bg-white/5" />
+      <div className="mt-2 h-4 w-64 rounded bg-white/5" />
+      <div className="mt-8 space-y-5">
+        <div className="h-[74px] rounded bg-white/5" />
+        <div className="h-[74px] rounded bg-white/5" />
+        <div className="h-11 rounded bg-white/5" />
+      </div>
+    </div>
+  );
+}
+
+export default function LoginPage() {
+  return (
     <main className="min-h-screen bg-[#0a0d0f] flex items-center justify-center px-6 py-16">
       <div className="w-full max-w-md">
         <div className="text-center mb-10">
@@ -72,54 +139,9 @@ export default function LoginPage() {
           </Link>
         </div>
 
-        <div className="rounded-2xl border border-white/5 bg-[#0d1117] p-8 shadow-lg shadow-black/30">
-          <h1 className="text-2xl font-black text-white mb-1">Client Login</h1>
-          <p className="text-gray-500 text-sm mb-8">Access your Work Progress dashboard.</p>
-
-          <form onSubmit={handleSubmit(onSubmit)} className="space-y-5" noValidate>
-            <div>
-              <label htmlFor="email" className="block text-sm font-medium text-gray-300 mb-2">
-                Email
-              </label>
-              <input
-                id="email"
-                type="email"
-                autoComplete="email"
-                {...register('email')}
-                className="w-full rounded-lg border border-white/10 bg-[#0a0d0f] px-4 py-2.5 text-white placeholder-gray-600 outline-none transition-colors focus:border-[#00d4aa]/60"
-                placeholder="you@company.com"
-              />
-              {errors.email && <p className="mt-1.5 text-sm text-red-400">{errors.email.message}</p>}
-            </div>
-
-            <div>
-              <label htmlFor="password" className="block text-sm font-medium text-gray-300 mb-2">
-                Password
-              </label>
-              <input
-                id="password"
-                type="password"
-                autoComplete="current-password"
-                {...register('password')}
-                className="w-full rounded-lg border border-white/10 bg-[#0a0d0f] px-4 py-2.5 text-white placeholder-gray-600 outline-none transition-colors focus:border-[#00d4aa]/60"
-                placeholder="Your password"
-              />
-              {errors.password && (
-                <p className="mt-1.5 text-sm text-red-400">{errors.password.message}</p>
-              )}
-            </div>
-
-            {serverError && (
-              <div className="rounded-lg border border-red-500/20 bg-red-500/10 px-4 py-2.5 text-sm text-red-400">
-                {serverError}
-              </div>
-            )}
-
-            <Button type="submit" size="lg" className="w-full" disabled={isSubmitting}>
-              {isSubmitting ? 'Signing in...' : 'Sign In'}
-            </Button>
-          </form>
-        </div>
+        <Suspense fallback={<LoginFormFallback />}>
+          <LoginForm />
+        </Suspense>
 
         <p className="mt-6 text-center text-sm text-gray-500">
           Need access?{' '}
